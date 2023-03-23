@@ -1,24 +1,11 @@
 ====================
-django-fernet-fields
+django-fernet-fields-v2
 ====================
 
-.. image:: https://secure.travis-ci.org/MichelML/django-fernet-fields.png?branch=master
-   :target: http://travis-ci.org/MichelML/django-fernet-fields
-   :alt: Test status
-.. image:: https://coveralls.io/repos/MichelML/django-fernet-fields/badge.png?branch=master
-   :target: https://coveralls.io/r/MichelML/django-fernet-fields
-   :alt: Test coverage
-.. image:: https://readthedocs.org/projects/django-fernet-fields/badge/?version=latest
-   :target: https://readthedocs.org/projects/django-fernet-fields/?badge=latest
-   :alt: Documentation Status
-.. image:: https://badge.fury.io/py/django-fernet-fields.svg
-   :target: https://pypi.python.org/pypi/django-fernet-fields
-   :alt: Latest version
-
 `Fernet`_ symmetric encryption for Django model fields, using the
-`cryptography`_ library.
+`cryptography`_ library and supports  Django >=4.0 .
 
-``django-fernet-fields`` supports `Django`_ 1.11 and later on Python 2.7, 3.5, 3.6, 3.7, pypy, and pypy3.
+``django-fernet-fields`` supports `Django`_ 4.0 and later on Python 3.8, 3.9, and 3.10.
 
 Only PostgreSQL, SQLite, and MySQL are tested, but any Django database backend
 with support for ``BinaryField`` should work.
@@ -31,13 +18,7 @@ with support for ``BinaryField`` should work.
 Getting Help
 ============
 
-Documentation for django-fernet-fields is available at
-https://django-fernet-fields.readthedocs.org/
-
-This app is available on `PyPI`_ and can be installed with ``pip install
-django-fernet-fields``.
-
-.. _PyPI: https://pypi.python.org/pypi/django-fernet-fields/
+Fork of https://github.com/orcasgit/django-fernet-fields . See docs there. The only changes made here are to support Django 4.
 
 
 Contributing
