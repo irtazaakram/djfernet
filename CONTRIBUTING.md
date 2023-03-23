@@ -21,9 +21,9 @@ Issues are easier to reproduce/resolve when they have:
 When creating a pull request:
 
 -   Write tests (see below)
--   Note user-facing changes in the [CHANGES](CHANGES.rst) file
+-   Note user-facing changes in the [CHANGES](CHANGES.md) file
 -   Update the documentation as needed
--   Add yourself to the [AUTHORS](AUTHORS.rst) file
+-   Add yourself to the [AUTHORS](AUTHORS.md) file
 
 ## Testing
 
