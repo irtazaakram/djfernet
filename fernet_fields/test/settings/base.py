@@ -1,7 +1,7 @@
 INSTALLED_APPS = [
-    'fernet_fields.test',
+    "fernet_fields.test",
 ]
 
-SECRET_KEY = 'secret'
+SECRET_KEY = "secret"
 
-SILENCED_SYSTEM_CHECKS = ['1_7.W001']
+SILENCED_SYSTEM_CHECKS = ["1_7.W001"]

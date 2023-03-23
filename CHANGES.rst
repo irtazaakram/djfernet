@@ -4,6 +4,19 @@ CHANGES
 master (unreleased)
 -------------------
 
+0.7 (2023.03.23)
+----------------
+
+* Support Postgres 10
+* Drop support for all django but Django >= 4
+* Add support for Django >= 4
+
+----------------
+
+* Support Postgres 10
+* Drop support for Django < 1.11, Python 3.3/3.4
+* Add support for Django 1.11 through 2.2, Python 3.7
+
 0.6 (2019.05.10)
 ----------------
 

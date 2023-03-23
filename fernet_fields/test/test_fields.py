@@ -13,7 +13,7 @@ from . import models
 class TestEncryptedField(object):
     def test_key_from_settings(self, settings):
         """If present, use settings.FERNET_KEYS."""
-        settings.FERNET_KEYS = ['secret']
+        settings.FERNET_KEYS = ["secret"]
         f = fields.EncryptedTextField()
 
         assert f.keys == settings.FERNET_KEYS
@@ -26,14 +26,14 @@ class TestEncryptedField(object):
 
     def test_key_rotation(self, settings):
         """Can supply multiple `keys` for key rotation."""
-        settings.FERNET_KEYS = ['key1', 'key2']
+        settings.FERNET_KEYS = ["key1", "key2"]
         f = fields.EncryptedTextField()
 
-        enc1 = Fernet(f.fernet_keys[0]).encrypt(b'enc1')
-        enc2 = Fernet(f.fernet_keys[1]).encrypt(b'enc2')
+        enc1 = Fernet(f.fernet_keys[0]).encrypt(b"enc1")
+        enc2 = Fernet(f.fernet_keys[1]).encrypt(b"enc2")
 
-        assert f.fernet.decrypt(enc1) == b'enc1'
-        assert f.fernet.decrypt(enc2) == b'enc2'
+        assert f.fernet.decrypt(enc1) == b"enc1"
+        assert f.fernet.decrypt(enc2) == b"enc2"
 
     def test_no_hkdf(self, settings):
         """Can set FERNET_USE_HKDF=False to avoid HKDF."""
@@ -43,9 +43,9 @@ class TestEncryptedField(object):
         f = fields.EncryptedTextField()
         fernet = Fernet(k1)
 
-        assert fernet.decrypt(f.fernet.encrypt(b'foo')) == b'foo'
+        assert fernet.decrypt(f.fernet.encrypt(b"foo")) == b"foo"
 
-    @pytest.mark.parametrize('key', ['primary_key', 'db_index', 'unique'])
+    @pytest.mark.parametrize("key", ["primary_key", "db_index", "unique"])
     def test_not_allowed(self, key):
         with pytest.raises(ImproperlyConfigured):
             fields.EncryptedIntegerField(**{key: True})
@@ -58,11 +58,11 @@ class TestEncryptedField(object):
 
 
 @pytest.mark.parametrize(
-    'model,vals',
+    "model,vals",
     [
-        (models.EncryptedText, ['foo', 'bar']),
-        (models.EncryptedChar, ['one', 'two']),
-        (models.EncryptedEmail, ['a@example.com', 'b@example.com']),
+        (models.EncryptedText, ["foo", "bar"]),
+        (models.EncryptedChar, ["one", "two"]),
+        (models.EncryptedEmail, ["a@example.com", "b@example.com"]),
         (models.EncryptedInt, [1, 2]),
         (models.EncryptedDate, [date(2015, 2, 5), date(2015, 2, 8)]),
         (
@@ -74,10 +74,10 @@ class TestEncryptedField(object):
 class TestEncryptedFieldQueries(object):
     def test_insert(self, db, model, vals):
         """Data stored in DB is actually encrypted."""
-        field = model._meta.get_field('value')
+        field = model._meta.get_field("value")
         model.objects.create(value=vals[0])
         with connection.cursor() as cur:
-            cur.execute('SELECT value FROM %s' % model._meta.db_table)
+            cur.execute("SELECT value FROM %s" % model._meta.db_table)
             data = [
                 force_str(field.fernet.decrypt(force_bytes(r[0])))
                 for r in cur.fetchall()
@@ -103,15 +103,15 @@ class TestEncryptedFieldQueries(object):
     def test_lookups_raise_field_error(self, db, model, vals):
         """Lookups are not allowed (they cannot succeed)."""
         model.objects.create(value=vals[0])
-        field_name = model._meta.get_field('value').__class__.__name__
-        lookups = set(dj_models.Field.class_lookups) - set(['isnull'])
+        field_name = model._meta.get_field("value").__class__.__name__
+        lookups = set(dj_models.Field.class_lookups) - set(["isnull"])
 
         for lookup in lookups:
             with pytest.raises(FieldError) as exc:
-                model.objects.get(**{'value__' + lookup: vals[0]})
+                model.objects.get(**{"value__" + lookup: vals[0]})
             assert field_name in str(exc.value)
             assert lookup in str(exc.value)
-            assert 'does not support lookups' in str(exc.value)
+            assert "does not support lookups" in str(exc.value)
 
 
 def test_nullable(db):
