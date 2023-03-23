@@ -200,4 +200,4 @@ Contributing
 
 See the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/django-fernet-fields/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/MichelML/django-fernet-fields/blob/master/CONTRIBUTING.rst

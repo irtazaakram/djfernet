@@ -7,8 +7,8 @@ your issue fixed / pull request merged.
 Please file bugs and send pull requests to the `GitHub repository`_ and `issue
 tracker`_.
 
-.. _GitHub repository: https://github.com/orcasgit/django-fernet-fields/
-.. _issue tracker: https://github.com/orcasgit/django-fernet-fields/issues
+.. _GitHub repository: https://github.com/MichelML/django-fernet-fields/
+.. _issue tracker: https://github.com/MichelML/django-fernet-fields/issues
 
 
 
@@ -60,7 +60,7 @@ versions) and generate a coverage report in the ``htmlcov/`` directory::
 
     make test
 
-This requires that you have ``python2.7``, ``python3.3``, ``python3.4``,
+This requires that you have python 3.8, 3.9, and 3.10,
 ``pypy``, and ``pypy3`` binaries on your system's shell path.
 
 To install PostgreSQL on Debian-based systems::

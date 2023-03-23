@@ -2,11 +2,11 @@
 django-fernet-fields
 ====================
 
-.. image:: https://secure.travis-ci.org/orcasgit/django-fernet-fields.png?branch=master
-   :target: http://travis-ci.org/orcasgit/django-fernet-fields
+.. image:: https://secure.travis-ci.org/MichelML/django-fernet-fields.png?branch=master
+   :target: http://travis-ci.org/MichelML/django-fernet-fields
    :alt: Test status
-.. image:: https://coveralls.io/repos/orcasgit/django-fernet-fields/badge.png?branch=master
-   :target: https://coveralls.io/r/orcasgit/django-fernet-fields
+.. image:: https://coveralls.io/repos/MichelML/django-fernet-fields/badge.png?branch=master
+   :target: https://coveralls.io/r/MichelML/django-fernet-fields
    :alt: Test coverage
 .. image:: https://readthedocs.org/projects/django-fernet-fields/badge/?version=latest
    :target: https://readthedocs.org/projects/django-fernet-fields/?badge=latest
@@ -45,5 +45,5 @@ Contributing
 
 See the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/django-fernet-fields/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/MichelML/django-fernet-fields/blob/master/CONTRIBUTING.rst
 
