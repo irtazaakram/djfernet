@@ -5,7 +5,7 @@ authors = [
   { name="MichelML", email="michmoreau.l@gmail.com" },
 ]
 description = "Fernet-encrypted model fields for Django"
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",

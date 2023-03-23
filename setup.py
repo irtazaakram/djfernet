@@ -2,7 +2,7 @@ from os.path import join
 from setuptools import setup, find_packages
 
 
-long_description = open("README.rst").read() + open("CHANGES.rst").read()
+long_description = open("README.md").read() + open("CHANGES.md").read()
 
 
 def get_version():
@@ -17,7 +17,6 @@ setup(
     version=get_version(),
     description="Fernet-encrypted model fields for Django",
     long_description=long_description,
-    long_description_content_type="text/x-rst",
     author="MichelML, ORCAS, Inc",
     author_email="michmoreau.l@gmail.com",
     url="https://github.com/MichelML/django-fernet-fields/",
