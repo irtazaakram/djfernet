@@ -8,6 +8,5 @@ pytest-django
 pytest
 coverage
 psycopg2
-psycopg2cffi
 Sphinx
 flake8
